@@ -22,7 +22,17 @@ sudo systemctl enable docker
 echo "-------------add current user on docker group-------------"
 sudo usermod -aG docker $USER
 
+
+echo "-------------install docker-compose-------------"
+sudo curl -L "https://github.com/docker/compose/releases/download/1.27.4/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+echo "-------------assign-------------"
+sudo chmod +x /usr/local/bin/docker-compose
+
+
 echo "-------------example run-------------"
 sudo docker run --rm hello-world
 
+
+
 echo "-------------Congratulations. Installation is complete. -------------"
+
